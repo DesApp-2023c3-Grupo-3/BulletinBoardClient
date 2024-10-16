@@ -10,6 +10,10 @@ interface TablaContextType {
   setUsersJSON: React.Dispatch<React.SetStateAction<any[]>>;
   currentPages: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  currentPagesC: number;
+  setCurrentPageC: React.Dispatch<React.SetStateAction<number>>;
+  currentPagesU: number;
+  setCurrentPageU: React.Dispatch<React.SetStateAction<number>>;
   rowsPerPage: number;
   setRowsPerPage: React.Dispatch<React.SetStateAction<number>>;
   rowsPerPageC: number;
@@ -31,6 +35,10 @@ export const TablaContext = createContext<TablaContextType>({
   setUsersJSON: () => {},
   currentPages: 1,
   setCurrentPage: () => {},
+  currentPagesC: 1,
+  setCurrentPageC: () => {},
+  currentPagesU: 1,
+  setCurrentPageU: () => {},
   rowsPerPage: 7,
   setRowsPerPage: () => {},
   rowsPerPageC: 12,
@@ -48,6 +56,8 @@ function TablaProvider({ children }: { children: ReactNode }) {
   const [commissionsJSON, setCommissionsJSON] = useState<Commission[]>([]);
   const [usersJSON, setUsersJSON] = useState<any[]>([]);
   const [currentPages, setCurrentPage] = useState(1);
+  const [currentPagesC, setCurrentPageC] = useState(1);
+  const [currentPagesU, setCurrentPageU] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(7);
   const [rowsPerPageC, setRowsPerPageC] = useState(12);
   const [rowsPerPageU, setRowsPerPageU] = useState(5);
@@ -65,6 +75,10 @@ function TablaProvider({ children }: { children: ReactNode }) {
         setUsersJSON,
         currentPages,
         setCurrentPage,
+        currentPagesC,
+        setCurrentPageC,
+        currentPagesU,
+        setCurrentPageU,
         rowsPerPage,
         setRowsPerPage,
         rowsPerPageC,

@@ -203,19 +203,13 @@ function Usuarios() {
     });
   };
 
-  const {
-    usersJSON,
-    setUsersJSON,
-    rowsPerPageU,
-    setPages,
-    setTotalItems,
-    currentPages,
-  } = useTabla();
+  const { usersJSON, setUsersJSON, setPages, setTotalItems, currentPagesU } =
+    useTabla();
 
   const updateUsersTable = async () => {
     setLoading(true);
     userApi
-      .getPaginated(currentPages, rowsPerPageU)
+      .getPaginated(currentPagesU, Math.floor(window.innerHeight / 70), '')
       .then((r) => {
         setUsersJSON(r.data.data);
         setTotalItems(r.data.total);

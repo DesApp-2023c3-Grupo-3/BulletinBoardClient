@@ -22,7 +22,7 @@ function Comisiones() {
   const {
     commissionsJSON,
     setCommissionsJSON,
-    currentPages,
+    currentPagesC,
     setPages,
     setTotalItems,
     rowsPerPageC,
@@ -35,7 +35,7 @@ function Comisiones() {
   const updateCommissionsTable = () => {
     setLoading(true);
     commissionApi
-      .getPaginated(currentPages, rowsPerPageC)
+      .getPaginated(currentPagesC, rowsPerPageC)
       .then((r) => {
         setCommissionsJSON(r.data.data);
         setTotalItems(r.data.total);
