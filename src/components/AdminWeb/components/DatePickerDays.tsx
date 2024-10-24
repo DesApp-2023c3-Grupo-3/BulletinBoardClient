@@ -47,7 +47,8 @@ function DatePickerDays({
           Fecha
         </span>
         <DatePicker
-          value={
+          value={dayjsToDateValue(selectedDateInit)}
+          defaultValue={
             !isCreate
               ? today(getLocalTimeZone())
               : dayjsToDateValue(selectedDateInit)
